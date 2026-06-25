@@ -1,5 +1,4 @@
-const slider =
-    document.querySelector('.comparison-slider');
+const slider = document.querySelector('.comparison-slider');
 
 if (slider) {
 
@@ -14,10 +13,10 @@ if (slider) {
         const value = slider.value;
 
         beforeWrapper.style.width =
-            value + '%';
+            `${value}%`;
 
         sliderLine.style.left =
-            value + '%';
+            `${value}%`;
 
     });
 
@@ -31,10 +30,14 @@ faqItems.forEach(item => {
     const button =
         item.querySelector('.faq-question');
 
-    button.addEventListener('click', () => {
+    if (button) {
 
-        item.classList.toggle('active');
+        button.addEventListener('click', () => {
 
-    });
+            item.classList.toggle('active');
+
+        });
+
+    }
 
 });
