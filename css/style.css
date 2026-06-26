@@ -57,214 +57,762 @@ ol{
 }
 
 
-/* ==========================
+
+/* ==========================================
    HERO
-========================== */
+========================================== */
 
-.hero {
-    min-height: 100vh;
-    overflow: hidden;
-    background: #fff;
+.hero{
+
+    width:100%;
+
+    min-height:100svh;
+
+    background:#fff;
+
 }
 
-.hero .container {
-    max-width: none;
-    width: 100%;
-    padding: 0;
+
+/* ==========================================
+   WRAPPER
+========================================== */
+
+.hero-wrapper{
+
+    width:min(100%,1800px);
+
+    min-height:100svh;
+
+    margin-inline:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
 }
 
-.hero-content {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    min-height: 100vh;
+
+/* ==========================================
+   COLUNA ESQUERDA
+========================================== */
+
+.hero-left{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
 }
 
-/* FOTO */
 
-.hero-product {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+/* ==========================================
+   IMAGEM
+========================================== */
+
+.hero-left img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
 }
 
-.hero-product img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+
+/* ==========================================
+   COLUNA DIREITA
+========================================== */
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:
+
+        clamp(28px,4vw,80px);
+
 }
 
-.hero-product::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 220px;
-    height: 100%;
 
-    background: linear-gradient(to right,
-            rgba(255, 255, 255, 0),
-            rgba(255, 255, 255, .95));
-    pointer-events: none;
+/* ==========================================
+   CONTEÚDO
+========================================== */
+
+.hero-content{
+
+    width:100%;
+
+    max-width:640px;
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-/* TEXTO */
+/* ==========================================
+   BADGE
+========================================== */
 
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 80px;
-    background: #fff;
-    margin-left:0;
-    padding-left:20px;
+.hero-badge{
+
+    align-self:flex-start;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+        clamp(8px,0.8vw,12px)
+
+        clamp(16px,1.4vw,22px);
+
+    border-radius:999px;
+
+    background:#fff3e8;
+
+    color:#ec7404;
+
+    font-size:
+
+        clamp(.80rem,.9vw,.95rem);
+
+    font-weight:700;
+
+    margin-bottom:
+
+        clamp(20px,2vw,34px);
+
 }
 
-.hero-rating {
-    display: inline-block;
-    background: #fff3e8;
-    color: #ec7404;
-    padding: 10px 16px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 18px;
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+.hero-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    font-size:
+
+        clamp(2.4rem,4vw,4.5rem);
+
+    line-height:1.05;
+
+    font-weight:900;
+
+    color:#111;
+
+    letter-spacing:-.03em;
+
+    margin-bottom:
+
+        clamp(18px,2vw,28px);
+
 }
 
-.hero h1 {
-    font-size: 58px;
-    line-height: 1.08;
-    font-weight: 800;
+.hero-title span{
+
+    color:#111;
+
 }
 
-.hero h1 span {
-    color: #ec7404;
+.hero-title-highlight{
+
+    color:#ec7404 !important;
+
 }
 
-.hero p {
-    font-size: 20px;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
+
+/* ==========================================
+   DESCRIÇÃO
+========================================== */
+
+.hero-description{
+
+    max-width:34ch;
+
+    font-size:
+
+        clamp(1rem,1.15vw,1.35rem);
+
+    line-height:1.65;
+
+    color:#666;
+
+    margin-bottom:
+
+        clamp(28px,3vw,42px);
+
 }
 
-.hero-benefits {
-    list-style: none;
-    margin-bottom: 1px;
+
+/* ==========================================
+   BENEFÍCIOS
+========================================== */
+
+.hero-benefits{
+
+    list-style:none;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            2,
+
+            minmax(0,1fr)
+
+        );
+
+    gap:
+
+        clamp(10px,1vw,16px)
+
+        clamp(14px,2vw,24px);
+
+    margin-bottom:
+
+        clamp(28px,3vw,42px);
+
 }
 
-.hero-benefits li {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 500;
+.hero-benefits li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
 }
 
-.hero-stars {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
+.benefit-icon{
+
+    width:
+
+        clamp(22px,1.4vw,28px);
+
+    height:
+
+        clamp(22px,1.4vw,28px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#ec7404;
+
+    color:#fff;
+
+    font-size:
+
+        clamp(.75rem,.9vw,.9rem);
+
+    font-weight:700;
+
+    flex-shrink:0;
+
 }
 
-.rating-number {
-    color: #5f6368;
-    font-size: 18px;
-    font-weight: 500;
+.hero-benefits li span:last-child{
+
+    font-size:
+
+        clamp(.92rem,1vw,1.05rem);
+
+    font-weight:500;
+
+    color:#333;
+
 }
 
-.rating-stars {
-    display: flex;
+
+/* ==========================================
+   AVALIAÇÕES
+========================================== */
+
+.hero-review{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+
+        clamp(8px,1vw,14px);
+
+    flex-wrap:wrap;
+
+    margin-bottom:
+
+        clamp(28px,3vw,40px);
+
 }
 
-.star {
-    font-size: 18px;
-    line-height: 1;
+.review-score{
+
+    font-size:
+
+        clamp(1.1rem,1.2vw,1.35rem);
+
+    font-weight:800;
+
+    color:#111;
+
 }
 
-.full {
-    color: #fbbc04;
+.review-stars{
+
+    color:#FDBA12;
+
+    letter-spacing:2px;
+
+    font-size:
+
+        clamp(1rem,1.2vw,1.3rem);
+
 }
 
-/* última estrela */
+.review-total{
 
-.partial {
-    position: relative;
-    display: inline-block;
-    width: 18px;
+    color:#666;
+
+    font-size:
+
+        clamp(.88rem,.95vw,1rem);
+
 }
 
-.star-empty {
-    color: #dadce0;
+/* ==========================================
+   PREÇO
+========================================== */
+
+.hero-price{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+
+        clamp(6px,.8vw,12px);
+
+    margin-bottom:
+
+        clamp(28px,3vw,42px);
+
 }
 
-.star-fill {
-    color: #fbbc04;
+.price-old{
 
-    position: absolute;
-    left: 0;
-    top: 0;
+    font-size:
 
-    width: 60%;
-    /* 4.9 = 90% */
-    overflow: hidden;
+        clamp(.95rem,1vw,1.2rem);
+
+    color:#9b9b9b;
+
+    text-decoration:line-through;
+
+    font-weight:500;
+
 }
 
-.rating-text {
-    color: #5f6368;
-    font-size: 16px;
+.price-current{
+
+    font-size:
+
+        clamp(3rem,6vw,5.2rem);
+
+    line-height:.95;
+
+    font-weight:900;
+
+    color:#111;
+
+    letter-spacing:-.05em;
+
 }
 
-.old-price {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 22px;
-    opacity: .7;
-    display: block;
+.price-installments{
+
+    font-size:
+
+        clamp(.95rem,1vw,1.15rem);
+
+    color:#666;
+
 }
 
-.new-price {
-    color: #111;
-    font-size: 60px;
-    font-weight: 800;
-    line-height: 1;
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+.hero-button{
+
+    width:min(100%,460px);
+
+    min-height:
+
+        clamp(58px,5vw,72px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ec7404;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:
+
+        clamp(14px,1vw,18px);
+
+    font-size:
+
+        clamp(1rem,1vw,1.15rem);
+
+    font-weight:700;
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    box-shadow:
+
+        0 16px 35px rgba(236,116,4,.28);
+
+    margin-bottom:
+
+        clamp(26px,3vw,42px);
+
 }
 
-.installments {
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 18px;
+.hero-button:hover{
+
+    background:#d66500;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 22px 45px rgba(236,116,4,.35);
+
 }
 
-.btn-primary {
-    width: 100%;
-    max-width: 420px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ec7404;
-    color: #fff;
-    text-decoration: none;
-    padding: 22px;
-    border-radius: 14px;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 18px;
-    transition: .3s;
+
+/* ==========================================
+   SELOS
+========================================== */
+
+.hero-trust{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:
+
+        clamp(10px,1vw,14px);
+
 }
 
-.btn-primary:hover {
-    background: #d76400;
-    transform: translateY(-2px);
+.trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+        clamp(10px,.9vw,12px)
+
+        clamp(16px,1.4vw,22px);
+
+    border:1px solid #ececec;
+
+    border-radius:999px;
+
+    background:#fafafa;
+
+    font-size:
+
+        clamp(.82rem,.9vw,.95rem);
+
+    color:#555;
+
+    white-space:nowrap;
+
+    transition:
+        border-color .25s ease,
+        transform .25s ease,
+        background .25s ease;
+
 }
 
-.hero-trust {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    color: #444;
-    font-size: 15px;
-    font-weight: 500;
+.trust-item:hover{
+
+    transform:translateY(-2px);
+
+    border-color:#ec7404;
+
+    background:#fff8f2;
+
 }
+
+/* ==========================================
+   DESKTOPS GRANDES
+========================================== */
+
+@media (min-width:1800px){
+
+    .hero-wrapper{
+
+        max-width:1800px;
+
+    }
+
+    .hero-content{
+
+        max-width:700px;
+
+    }
+
+}
+
+
+/* ==========================================
+   NOTEBOOKS
+========================================== */
+
+@media (max-width:1400px){
+
+    .hero-right{
+
+        padding:
+            clamp(28px,3vw,50px);
+
+    }
+
+    .hero-title{
+
+        font-size:
+            clamp(2.2rem,3.5vw,3.8rem);
+
+    }
+
+}
+
+
+/* ==========================================
+   NOTEBOOKS MENORES
+========================================== */
+
+@media (max-width:1200px){
+
+    .hero-wrapper{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(0,1fr);
+
+    }
+
+    .hero-content{
+
+        max-width:560px;
+
+    }
+
+    .hero-benefits{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .hero{
+
+        min-height:auto;
+
+    }
+
+    .hero-wrapper{
+
+        grid-template-columns:1fr;
+
+        min-height:auto;
+
+    }
+
+    .hero-left{
+
+        order:1;
+
+        min-height:65svh;
+
+    }
+
+    .hero-right{
+
+        order:2;
+
+        padding:
+            clamp(30px,6vw,60px);
+
+    }
+
+    .hero-content{
+
+        max-width:700px;
+
+        margin-inline:auto;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width:768px){
+
+    .hero-left{
+
+        min-height:55svh;
+
+    }
+
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+    .hero-badge{
+
+        align-self:center;
+
+    }
+
+    .hero-title{
+
+        font-size:
+            clamp(2rem,8vw,3rem);
+
+    }
+
+    .hero-description{
+
+        max-width:100%;
+
+    }
+
+    .hero-benefits{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-benefits li{
+
+        justify-content:center;
+
+    }
+
+    .hero-review{
+
+        justify-content:center;
+
+    }
+
+    .hero-price{
+
+        align-items:center;
+
+    }
+
+    .hero-button{
+
+        width:100%;
+
+        max-width:none;
+
+    }
+
+    .hero-trust{
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES PEQUENOS
+========================================== */
+
+@media (max-width:480px){
+
+    .hero-left{
+
+        min-height:45svh;
+
+    }
+
+    .hero-right{
+
+        padding:24px;
+
+    }
+
+}
+
+
 
 
 /* ==========================
